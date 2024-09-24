@@ -16,6 +16,7 @@ namespace ResizeImage
 
         private ResizeImage.Resize.StandardSizes standardSize = ResizeImage.Resize.StandardSizes.Custom;
 
+        public System.Drawing.Image Image { get; set; } = null;
         public System.Int32 Wdith { get; set; } = 50;
         public System.Int32 Height { get; set; } = 50;
         public ResizeImage.Resize.StandardSizes StandardSize
