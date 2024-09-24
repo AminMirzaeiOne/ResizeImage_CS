@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ResizeImage
 {
-    internal class Resize
+    public class Resize
     {
+        public System.Int32 Wdith { get; set; } = 50;
     }
 }
