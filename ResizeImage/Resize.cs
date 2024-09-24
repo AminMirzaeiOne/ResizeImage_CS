@@ -8,6 +8,10 @@ namespace ResizeImage
 {
     public class Resize
     {
+        public enum StandardSizes
+        {
+            Custom, Default, VerySmall, Small, Medium, Large, VeryLarge
+        }
         public System.Int32 Wdith { get; set; } = 50;
         public System.Int32 Height { get; set; } = 50;
     }
