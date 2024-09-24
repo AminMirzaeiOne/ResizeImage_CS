@@ -38,8 +38,9 @@ namespace ResizeImage
 
         }
 
-        public Resize(System.Int32 width, System.Int32 height)
+        public Resize(System.Drawing.Image image,System.Int32 width, System.Int32 height)
         {
+            this.Image = image;
             this.Wdith = width;
             this.Height = height;
         }
