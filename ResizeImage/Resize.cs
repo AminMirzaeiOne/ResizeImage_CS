@@ -19,5 +19,21 @@ namespace ResizeImage
         public System.Int32 Wdith { get; set; } = 50;
         public System.Int32 Height { get; set; } = 50;
 
+        public Resize() 
+        { 
+
+        }
+
+        public Resize(System.Int32 width,System.Int32 height)
+        {
+            this.Wdith = width;
+            this.Height = height;
+        }
+
+        public Resize(ResizeImage.Resize.StandardSizes standard)
+        {
+            this.standardSize = standard;
+        }
+
     }
 }
