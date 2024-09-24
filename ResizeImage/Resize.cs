@@ -45,7 +45,7 @@ namespace ResizeImage
 
         public Resize(ResizeImage.Resize.StandardSizes standard)
         {
-            this.standardSize = standard;
+            this.StandardSize = standard;
         }
 
     }
