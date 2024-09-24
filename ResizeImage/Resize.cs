@@ -45,7 +45,7 @@ namespace ResizeImage
             this.Height = height;
         }
 
-        public Resize(ResizeImage.Resize.StandardSizes standard)
+        public Resize(System.Drawing.Image image,ResizeImage.Resize.StandardSizes standard)
         {
             this.StandardSize = standard;
         }
