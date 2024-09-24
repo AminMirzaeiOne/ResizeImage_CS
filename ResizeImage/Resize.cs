@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ResizeImage
 {
@@ -48,6 +52,29 @@ namespace ResizeImage
         public Resize(System.Drawing.Image image,ResizeImage.Resize.StandardSizes standard)
         {
             this.StandardSize = standard;
+        }
+
+        public System.Drawing.Bitmap ActionSize()
+        {
+            var destRect = new Rectangle(0, 0, this.Wdith, this.Height);
+            var destImage = new Bitmap(this.Wdith, this.Height);
+            destImage.SetResolution(this.Image.HorizontalResolution, this.Image.VerticalResolution);
+            using (var graphics = Graphics.FromImage(destImage))
+            {
+                graphics.CompositingMode = CompositingMode.SourceCopy;
+                graphics.CompositingQuality = CompositingQuality.HighQuality;
+                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                graphics.SmoothingMode = SmoothingMode.HighQuality;
+                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+                using (var wrapMode = new ImageAttributes())
+                {
+                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                    graphics.DrawImage(this.Image, destRect, 0, 0, this.Image.Width, this.Image.Height, GraphicsUnit.Pixel, wrapMode);
+                }
+            }
+
+            return destImage;
         }
 
     }
