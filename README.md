@@ -1,7 +1,7 @@
 # ResizeImage
 
 <h2> 👨‍💻 About Project</h2>
-Intelligent autocomplete control for textboxes and richtextboxes (Windows form) <br />
+A library class that is used to change the size of pictures and icons in Windows Forms <br />
 
 <h2> ⭐ Features</h2>
 - Support for standard sizes <br />
